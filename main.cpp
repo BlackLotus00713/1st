@@ -1,83 +1,162 @@
 #include <iostream>
 #include <Windows.h>
+#include <string>
+#include <cmath>
+
+
+
+//void PrintHelloWorld();
+//void PrintSum(int numberOne, int numberTwo = 4);
+//int Sum(int numberOne, int numberTwo);
+//void Hi();
+//
+//
+//int MyPow(int num1, int num2)
+//{
+//	int number = 1;
+//	for (int i = 0; i < num2; i++)
+//	{
+//		number *= num1;
+//	}
+//	return number;
+//}
+//
+//
+//
+//void PrintArray(int arr[], int size)
+//{
+//	for (int i = 0; i < size; i++)
+//	{
+//		std::cout << arr[i] << " ";
+//	}
+//	std::cout << "\n";
+//}
+//
+//void SetArray(int arr[], int size)
+//{
+//	for (int i = 0; i < size; i++)
+//	{
+//		std::cin>> arr[i];
+//	}
+//	std::cout << "\n";
+//}
+//
+//void ChangeArray(int arr[], int size, int tempArr[])
+//{
+//	for (int i = 0; i < size; i++)
+//	{
+//		tempArr[i] = arr[i];
+//	}
+//	int tempArrCounter = size - 1;
+//	for (int i = 0; i < size; i++)
+//	{
+//		arr[i] = tempArr[tempArrCounter];
+//		tempArrCounter--;
+//	}
+//	for (int i = 0; i < size; i++)
+//	{
+//		tempArr[i] = 0;
+//	}
+//	
+//	std::cout << "\n";
+//}
+
+//int Sum(int numberOne, int numberTwo)
+//{
+//	return numberOne + numberTwo;
+//}
+//
+//double Sum(double numberOne, double numberTwo)
+//{
+//	return numberOne - numberTwo;
+//}
+
+
+int Fak(int n)
+{
+	if (n < 0)
+	{
+		return 0;
+	}
+	if (n == 0)
+	{
+		return 1;
+	}
+	else
+	{
+		return n * Fak(n - 1);
+	}
+}
+
+
+int RecSum(int numberOne, int numberTwo) 
+{
+
+	if (numberTwo == numberOne - 1)
+	{
+		return 0;
+	}
+		
+	return numberTwo + RecSum(numberOne, numberTwo - 1);
+}
+
+void PrintStars(int count)
+{
+	if (count == 0)
+	{
+		return;
+	}
+	std::cout << " * ";
+	PrintStars(count - 1);
+}
+
 
 int main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-
-	/*short d = 6;
-	int a = 1;
-	float b = 3.2;
-	double c = 5.3;
-	long long e = 999999999;
-
-	char hp = '6';
-	char hp2 = 'f';
-	char hp3 = 69;
-
-	std::string name = "stroka";*/
-
-	//		 ||   &&
-
-	int a, b, c;
-
-	std::cout << "¬ведите три числа: ";
-	std::cin >> a >> b >> c;
-
-	if (a != b && b != c && a != c) 
-	{
-		if (a < b && a < c) 
-		{
-			std::cout << a << " ";
-			if (b < c) 
-			{
-				std::cout << b << " " << c;
-			}
-			else 
-			{
-				std::cout << c << " " << b;
-
-			}
-		}
-		else if (b < a && b < c) {
-			std::cout << b << " ";
-			if (a < c) 
-			{
-				std::cout << a << " " << c;
-			}
-			else 
-			{
-				std::cout << c << " " << a;
-			}
-		}
-
-		else 
-		{
-			std::cout << c << " ";
-			if (a < b) 
-			{
-				std::cout << a << " " << b;
-			}
-			else {
-				std::cout << b << " " << a;
-			}
-		}
-	}
-	else 
-	{
-		std::cout << "„исла не должны совпадать!";
-	}
-
 	
+	/*const int size = 5;
+	int tempArr[size];
+	int arr[size];
 	
-	
+	SetArray(arr, size);
+	PrintArray(arr, size);
+	ChangeArray(arr, size, tempArr);
+	PrintArray(arr, size);*/
 
-
+	std::cout << RecSum(1, 4) << "\n"; // 10
+	PrintStars(6);
 	return 0;
 }
 
 
+
+
+
+
+void Hi()
+{
+	std::cout << "Hi";
+}
+
+
+void PrintHelloWorld()
+{
+	std::cout << "Hello world";
+	Hi();
+}
+
+
+void PrintSum(int numberOne, int numberTwo)
+{
+	std::cout << numberOne + numberTwo;
+}
+
+int Sum(int numberOne, int numberTwo)
+{
+	return numberOne + numberTwo;
+}
 
 
 
